@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { NextSeo } from "next-seo";
 import styles from "../styles/Home.module.css";
 import { Toolbar } from "../components/toolbar";
@@ -58,7 +59,7 @@ export default function Home({ posts }) {
                 className={styles.post}
               >
                 <h3>{p.title}</h3>
-                <img className={styles.mainImage} src={p.mainImage} />
+                <Image className={styles.mainImage} src={p.mainImage} />
               </div>
             ))
           ) : (

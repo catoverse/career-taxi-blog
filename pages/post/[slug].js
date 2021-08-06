@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { NextSeo } from "next-seo";
 import { useState, useEffect } from "react";
 import styles from "../../styles/Post.module.css";
@@ -36,7 +37,7 @@ export const Post = ({ title, body, image }) => {
       <Toolbar />
       <div className={styles.main}>
         <h1>{title}</h1>
-        {imageUrl && <img className={styles.mainImage} src={imageUrl} />}
+        {imageUrl && <Image className={styles.mainImage} src={imageUrl} />}
         <div className={styles.body}>
           <BlockContent blocks={body} />
         </div>
