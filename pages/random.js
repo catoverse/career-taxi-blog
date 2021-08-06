@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { NextSeo } from "next-seo";
 import styles from "../styles/Home.module.css";
 import { Toolbar } from "../components/toolbar";
 import imageUrlBuilder from "@sanity/image-url";
@@ -13,7 +12,7 @@ export default function Home({ posts }) {
   useEffect(() => {
     if (posts.length) {
       const imgBuilder = imageUrlBuilder({
-        projectId: "w1qp8awm",
+        projectId: "mjoyrhci",
         dataset: "production",
       });
 
@@ -32,17 +31,6 @@ export default function Home({ posts }) {
 
   return (
     <div>
-      <NextSeo
-        title="Simple Usage Example"
-        description="A short description goes here."
-      />
-      {/* <Head>
-        <title>Home Page</title>
-        <meta
-          name="description"
-          content="This is the description of our home page."
-        />
-      </Head> */}
       <Toolbar />
       <div className={styles.main}>
         <h1>Welcome To My Blog</h1>
@@ -72,7 +60,7 @@ export default function Home({ posts }) {
 
 export const getServerSideProps = async (pageContext) => {
   const query = encodeURIComponent('*[ _type == "post" ]');
-  const url = `https://w1qp8awm.api.sanity.io/v1/data/query/production?query=${query}`;
+  const url = `https://mjoyrhci.api.sanity.io/v1/data/query/production?query=${query}`;
   const result = await fetch(url).then((res) => res.json());
 
   if (!result.result || !result.result.length) {
