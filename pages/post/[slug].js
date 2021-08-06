@@ -37,7 +37,9 @@ export const Post = ({ title, body, image }) => {
       <Toolbar />
       <div className={styles.main}>
         <h1>{title}</h1>
-        {imageUrl && <Image className={styles.mainImage} src={imageUrl} />}
+        {imageUrl && (
+          <Image className={styles.mainImage} src={imageUrl} alt="post" />
+        )}
         <div className={styles.body}>
           <BlockContent blocks={body} />
         </div>

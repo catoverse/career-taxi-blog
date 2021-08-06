@@ -59,7 +59,11 @@ export default function Home({ posts }) {
                 className={styles.post}
               >
                 <h3>{p.title}</h3>
-                <Image className={styles.mainImage} src={p.mainImage} />
+                <Image
+                  className={styles.mainImage}
+                  src={p.mainImage}
+                  alt="First Post"
+                />
               </div>
             ))
           ) : (
