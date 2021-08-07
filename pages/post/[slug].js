@@ -7,7 +7,13 @@ import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import { Toolbar } from "../../components/toolbar.js";
 
-export const Post = ({ title, body, image }) => {
+export const Post = ({ title, body, image, publish }) => {
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
@@ -20,10 +26,6 @@ export const Post = ({ title, body, image }) => {
   }, [image]);
   return (
     <div>
-      {/* <Head>
-        <title>{title}</title>
-        <meta name="description" content={`${body[0].children[0].text}`} />
-      </Head> */}
       <NextSeo
         title={title}
         description={`${body[0].children[0].text}`}
@@ -40,6 +42,7 @@ export const Post = ({ title, body, image }) => {
         {imageUrl && (
           <img className={styles.mainImage} src={imageUrl} alt="post" />
         )}
+        <h3>{new Date(publish).toLocaleDateString("en-us", options)}</h3>
         <div className={styles.body}>
           <BlockContent blocks={body} />
         </div>
@@ -74,6 +77,7 @@ export const getServerSideProps = async (pageContext) => {
         body: post.body,
         title: post.title,
         image: post.mainImage,
+        publish: post.publishedAt,
       },
     };
   }
