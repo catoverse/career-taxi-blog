@@ -38,13 +38,6 @@ export default function Home({ posts }) {
         title="Simple Usage Example"
         description="A short description goes here."
       />
-      {/* <Head>
-        <title>Home Page</title>
-        <meta
-          name="description"
-          content="This is the description of our home page."
-        />
-      </Head> */}
       <Toolbar />
       <div className={styles.main}>
         <h1>Welcome To My Blog</h1>

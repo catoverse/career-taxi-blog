@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import { NextSeo } from "next-seo";
 import { useState, useEffect } from "react";
 import styles from "../../styles/Post.module.css";
@@ -15,6 +14,7 @@ export const Post = ({ title, body, image, publish }) => {
   };
 
   const [imageUrl, setImageUrl] = useState("");
+  // const [time] = useState(publish);
 
   useEffect(() => {
     const imgBuilder = imageUrlBuilder({
@@ -42,7 +42,12 @@ export const Post = ({ title, body, image, publish }) => {
         {imageUrl && (
           <img className={styles.mainImage} src={imageUrl} alt="post" />
         )}
-        <h3>{new Date(publish).toLocaleDateString("en-us", options)}</h3>
+        {publish ? (
+          <h3>{new Date(publish).toLocaleDateString("en-us", options)}</h3>
+        ) : (
+          <span></span>
+        )}
+        {/* <h3>{new Date(publish).toLocaleDateString("en-us", options)}</h3> */}
         <div className={styles.body}>
           <BlockContent blocks={body} />
         </div>
@@ -77,7 +82,7 @@ export const getServerSideProps = async (pageContext) => {
         body: post.body,
         title: post.title,
         image: post.mainImage,
-        publish: post.publishedAt,
+        publish: post.publishedAt || null,
       },
     };
   }
