@@ -10,9 +10,7 @@ export const Header = () => {
         <a href="https://www.career.taxi/">
           <Image src={logo} alt="Career Taxi Logo" />
         </a>
-        <a href="mailto:rutvij.karkhanis@gmail.com" crossOrigin>
-          Email
-        </a>
+        <a href="mailto:rutvij.karkhanis@gmail.com">Email</a>
       </div>
     </div>
   );
