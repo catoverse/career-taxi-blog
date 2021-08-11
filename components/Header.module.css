@@ -1,0 +1,27 @@
+.main {
+  margin: auto;
+  width: 100%;
+  max-width: 100%;
+  color: white;
+  margin-bottom: 3.75em;
+  background-color: #1e1e1e;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1140px;
+  padding: 16px 0;
+}
+
+.wrapper img {
+  width: 50px;
+}
+
+.wrapper a:nth-child(2):hover {
+  color: #ffc033;
+  border-bottom: 1px solid #ffc033;
+  transition: 500ms;
+}

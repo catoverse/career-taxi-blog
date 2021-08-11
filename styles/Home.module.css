@@ -1,7 +1,59 @@
 .main h1,
-.main h3 {
-  text-align: center;
+.main h2,
+.main h3,
+.main p {
+  margin: 0;
 }
+
+.main {
+  max-width: 1140px;
+  margin: 0 auto;
+  min-height: calc(100vh - 96px);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.mainImage {
+  width: 23em;
+  height: 14em;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  margin-bottom: 1em;
+}
+
+.main h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 0.25em;
+}
+
+.post {
+  width: 23em;
+  cursor: pointer;
+  margin-bottom: 2em;
+}
+
+.date {
+  font-size: 15px;
+  color: #a2a2a2;
+}
+
+.post:nth-child(3n + 2) {
+  margin: 0 1.125em;
+}
+
+.post:hover .mainImage {
+  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px black;
+}
+/* 
 .feed {
   display: flex;
   align-items: center;
@@ -15,14 +67,7 @@
   text-align: center;
   max-width: calc(100vw - 50px);
 }
-.mainImage {
-  width: 500px;
-  transition: 0.2s;
-  border-radius: 5px;
-  max-width: calc(100vw - 50px);
-  box-shadow: 0px 0px 2px black;
-}
 .post:hover .mainImage {
   width: 490px;
   transition: 0.2s;
-}
+} */

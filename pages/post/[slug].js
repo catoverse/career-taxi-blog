@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import styles from "../../styles/Post.module.css";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
-import { Toolbar } from "../../components/toolbar.js";
+import { Header } from "../../components/Header.js";
+import { Footer } from "../../components/Footer.js";
 
 export const Post = ({ title, body, image, publish }) => {
   const options = {
@@ -14,7 +15,6 @@ export const Post = ({ title, body, image, publish }) => {
   };
 
   const [imageUrl, setImageUrl] = useState("");
-  // const [time] = useState(publish);
 
   useEffect(() => {
     const imgBuilder = imageUrlBuilder({
@@ -36,22 +36,24 @@ export const Post = ({ title, body, image, publish }) => {
           description: "This is the description of the main site",
         }}
       />
-      <Toolbar />
+      <Header />
       <div className={styles.main}>
         <h1>{title}</h1>
-        {imageUrl && (
-          <img className={styles.mainImage} src={imageUrl} alt="post" />
-        )}
         {publish ? (
-          <h3>{new Date(publish).toLocaleDateString("en-us", options)}</h3>
+          <p className={styles.date}>
+            {new Date(publish).toLocaleDateString("en-us", options)}
+          </p>
         ) : (
           <span></span>
         )}
-        {/* <h3>{new Date(publish).toLocaleDateString("en-us", options)}</h3> */}
+        {imageUrl && (
+          <img className={styles.mainImage} src={imageUrl} alt="post" />
+        )}
         <div className={styles.body}>
           <BlockContent blocks={body} />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
@@ -82,7 +84,7 @@ export const getServerSideProps = async (pageContext) => {
         body: post.body,
         title: post.title,
         image: post.mainImage,
-        publish: post.publishedAt || null,
+        publish: post.publishedAt || null, // if date is not available it gets null
       },
     };
   }

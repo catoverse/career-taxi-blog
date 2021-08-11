@@ -1,0 +1,17 @@
+.main {
+  width: 100%;
+  background-color: #1e1e1e;
+  margin-top: 3.75em;
+}
+
+.wrapper {
+  height: 6em;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper p {
+  margin: 0;
+}

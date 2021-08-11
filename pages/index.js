@@ -1,13 +1,20 @@
 import Head from "next/head";
 import Image from "next/image";
 import { NextSeo } from "next-seo";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 import styles from "../styles/Home.module.css";
-import { Toolbar } from "../components/toolbar";
 import imageUrlBuilder from "@sanity/image-url";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 export default function Home({ posts }) {
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+
   const router = useRouter();
   const [mappedPosts, setMappedPosts] = useState([]);
 
@@ -26,7 +33,7 @@ export default function Home({ posts }) {
           };
         })
       );
-      console.log(mappedPosts);
+      console.log(mappedPosts, setMappedPosts);
     } else {
       setMappedPosts([]);
     }
@@ -38,13 +45,9 @@ export default function Home({ posts }) {
         title="Simple Usage Example"
         description="A short description goes here."
       />
-      <Toolbar />
+      <Header />
       <div className={styles.main}>
-        <h1>Welcome To My Blog</h1>
-
-        <h3>Recent Posts:</h3>
-
-        <div className={styles.feed}>
+        <div className={styles.wrapper}>
           {mappedPosts.length ? (
             mappedPosts.map((p, index) => (
               <div
@@ -52,12 +55,22 @@ export default function Home({ posts }) {
                 key={index}
                 className={styles.post}
               >
-                <h3>{p.title}</h3>
                 <img
                   className={styles.mainImage}
                   src={p.mainImage}
                   alt="First Post"
                 />
+                <h2>{p.title}</h2>
+                {p.publishedAt ? (
+                  <p className={styles.date}>
+                    {new Date(p.publishedAt).toLocaleDateString(
+                      "en-us",
+                      options
+                    )}
+                  </p>
+                ) : (
+                  <span></span>
+                )}
               </div>
             ))
           ) : (
@@ -65,12 +78,15 @@ export default function Home({ posts }) {
           )}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
 
 export const getServerSideProps = async (pageContext) => {
-  const query = encodeURIComponent('*[ _type == "post" ]');
+  const query = encodeURIComponent(
+    '*[_type == "post"] | order(_createdAt desc)' // right statement is for sorting blogs newest to oldest
+  );
   const url = `https://w1qp8awm.api.sanity.io/v1/data/query/production?query=${query}`;
   const result = await fetch(url).then((res) => res.json());
 
