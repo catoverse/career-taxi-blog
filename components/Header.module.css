@@ -12,8 +12,8 @@
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 1140px;
-  padding: 16px 0;
+  max-width: 1200px;
+  padding: 16px 2em;
 }
 
 .wrapper img {

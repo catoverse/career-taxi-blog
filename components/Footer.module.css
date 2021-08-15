@@ -1,17 +1,17 @@
 .main {
   width: 100%;
   background-color: #1e1e1e;
-  margin-top: 3.75em;
+  margin-top: 3em;
 }
 
 .wrapper {
   height: 6em;
   color: white;
   display: flex;
-  justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .wrapper p {
-  margin: 0;
+  margin: 0 auto;
 }

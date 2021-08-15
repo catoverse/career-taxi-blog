@@ -33,7 +33,7 @@ export default function Home({ posts }) {
           };
         })
       );
-      console.log(mappedPosts, setMappedPosts);
+      console.log(mappedPosts);
     } else {
       setMappedPosts([]);
     }
