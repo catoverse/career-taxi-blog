@@ -24,6 +24,7 @@
   font-size: 1.875em;
   font-weight: 700;
   margin-bottom: 0.5em;
+  color: #ffc033;
 }
 
 .main h2 {
@@ -34,7 +35,7 @@
 
 .body p,
 .body li {
-  font-size: 1.125em;
+  font-size: 1em;
   line-height: 32px;
   text-align: left;
 }
@@ -69,7 +70,7 @@
 
   .body p,
   .body li {
-    font-size: 1.25em;
+    font-size: 1.1em;
     line-height: 2.125em;
   }
 

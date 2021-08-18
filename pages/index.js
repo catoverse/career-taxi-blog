@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 export default function Home({ posts }) {
+  // console.log(posts);
   const options = {
     year: "numeric",
     month: "long",
@@ -61,6 +62,10 @@ export default function Home({ posts }) {
                   alt="First Post"
                 />
                 <h2>{p.title}</h2>
+                {/* Description of the blog (First few lines) */}
+                <p className={styles.desc}>
+                  {p.body[0].children[0].text.substring(0, 200) + "..."}
+                </p>
                 {p.publishedAt ? (
                   <p className={styles.date}>
                     {new Date(p.publishedAt).toLocaleDateString(

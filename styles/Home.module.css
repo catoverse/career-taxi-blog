@@ -26,9 +26,14 @@
   margin-bottom: 0.125em;
 }
 
-.date {
+.date,
+.desc {
   font-size: 15px;
   color: #a2a2a2;
+}
+
+.desc {
+  padding-bottom: 0.5em;
 }
 
 .post {
@@ -46,7 +51,8 @@
     font-size: 2em;
   }
 
-  .date {
+  .date,
+  .desc {
     font-size: 1.125em;
   }
 
@@ -94,10 +100,11 @@
 
   .main h2 {
     font-size: 1.5em;
-    padding-bottom: 0.5em;
+    padding-bottom: 0.25em;
   }
 
-  .date {
+  .date,
+  .desc {
     font-size: 1em;
   }
 }

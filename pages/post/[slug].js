@@ -8,6 +8,7 @@ import { Header } from "../../components/Header.js";
 import { Footer } from "../../components/Footer.js";
 
 export const Post = ({ title, body, image, publish }) => {
+  console.log(body);
   const options = {
     year: "numeric",
     month: "long",
@@ -29,12 +30,12 @@ export const Post = ({ title, body, image, publish }) => {
       <NextSeo
         title={title}
         description={`${body[0].children[0].text}`}
-        canonical="https://www.career.taxi/"
-        openGraph={{
-          url: "https://www.career.taxi/",
-          title: "Main site",
-          description: "This is the description of the main site",
-        }}
+        // canonical="https://www.career.taxi/"
+        // openGraph={{
+        //   url: "https://www.career.taxi/",
+        //   title: "Main site",
+        //   description: "This is the description of the main site",
+        // }}
       />
       <Header />
       <div className={styles.main}>
