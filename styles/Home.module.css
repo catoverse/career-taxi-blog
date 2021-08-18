@@ -6,7 +6,7 @@
 }
 
 .main {
-  margin: 0 1.5em;
+  margin: 0 1em;
   /* min-height: calc(100vh - 96px); */
 }
 
@@ -26,14 +26,15 @@
   margin-bottom: 0.125em;
 }
 
-.date,
 .desc {
   font-size: 15px;
   color: #a2a2a2;
+  padding-bottom: 0.5em;
 }
 
-.desc {
-  padding-bottom: 0.5em;
+.date {
+  color: #a2a2a2;
+  font-size: 15px;
 }
 
 .post {
@@ -51,9 +52,12 @@
     font-size: 2em;
   }
 
-  .date,
   .desc {
     font-size: 1.125em;
+  }
+
+  .date {
+    font-size: 1.25em;
   }
 
   .post {
@@ -103,7 +107,6 @@
     padding-bottom: 0.25em;
   }
 
-  .date,
   .desc {
     font-size: 1em;
   }

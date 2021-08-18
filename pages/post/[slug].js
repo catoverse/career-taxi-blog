@@ -51,7 +51,12 @@ export const Post = ({ title, body, image, publish }) => {
           <img className={styles.mainImage} src={imageUrl} alt="post" />
         )}
         <div className={styles.body}>
-          <BlockContent blocks={body} />
+          <BlockContent
+            blocks={body}
+            imageOptions={{ w: 768, h: 540, fit: "max" }}
+            projectId="w1qp8awm"
+            dataset="production"
+          />
         </div>
       </div>
       <Footer />
