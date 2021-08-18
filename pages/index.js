@@ -64,7 +64,7 @@ export default function Home({ posts }) {
                 <h2>{p.title}</h2>
                 {/* Description of the blog (First few lines) */}
                 <p className={styles.desc}>
-                  {p.body[0].children[0].text.substring(0, 200) + "..."}
+                  {p.body[0].children[0].text.substring(0, 100) + "..."}
                 </p>
                 {p.publishedAt ? (
                   <p className={styles.date}>
