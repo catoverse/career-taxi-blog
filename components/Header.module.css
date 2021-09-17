@@ -16,10 +16,6 @@
   padding: 16px 2em;
 }
 
-.wrapper img {
-  width: 50px;
-}
-
 .wrapper a:nth-child(2):hover {
   color: #ffc033;
   border-bottom: 1px solid #ffc033;

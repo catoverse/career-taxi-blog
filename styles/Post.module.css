@@ -44,6 +44,14 @@
   color: #a2a2a2;
 }
 
+.body blockquote {
+  color: #a2a2a2;
+}
+
+.body p {
+  margin-bottom: 2em;
+}
+
 .date {
   color: #a2a2a2;
   font-size: 15px;
